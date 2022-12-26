@@ -68,7 +68,7 @@ TOLUA_API void tolua_pushusertype (lua_State* L, void* value, const char* type)
   {
    lua_pop(L,1);                          /* stack: mt ubox */
    lua_pushlightuserdata(L,value);
-   *(void**)lua_newuserdata(L,sizeof(void *)) = value;   /* stack: mt ubox u newud */
+   *(void**)lua_newuserdatauv(L,sizeof(void *),1) = value;   /* stack: mt ubox u newud */
    lua_pushvalue(L,-1);                   /* stack: mt ubox u newud newud */
    lua_insert(L,-4);                      /* stack: mt newud ubox u newud */
    lua_rawset(L,-3);                      /* stack: mt newud ubox */

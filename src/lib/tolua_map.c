@@ -12,6 +12,11 @@
 ** enhancements, or modifications.
 */
 
+// dj2026 trying to get building ... suppress warnings on snprintf etc.
+#ifndef _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 #include "tolua++.h"
 #include "tolua_event.h"
 #include "lauxlib.h"

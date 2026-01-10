@@ -43,8 +43,9 @@ extern "C" {
 
 typedef int lua_Object;
 
-#include "lua.h"
-#include "lauxlib.h"
+//dj2026 changed from "lua.h" to <> to get building..
+#include <lua.h>
+#include <lauxlib.h>
 
 struct tolua_Error
 {

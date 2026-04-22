@@ -12,9 +12,9 @@ if exist "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" (
 
 call :Rebuild Debug Win32 || exit /b 1
 call :Rebuild Debug x64 || exit /b 1
-call :Rebuild Debug ARM64 || exit /b 1
 call :Rebuild Release Win32 || exit /b 1
 call :Rebuild Release x64 || exit /b 1
+call :Rebuild Debug ARM64 || exit /b 1
 call :Rebuild Release ARM64 || exit /b 1
 
 echo.

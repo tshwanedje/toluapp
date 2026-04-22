@@ -12,15 +12,19 @@ if exist "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" (
 
 call :Rebuild Debug Win32 || exit /b 1
 call :Rebuild Debug x64 || exit /b 1
+call :Rebuild Debug ARM64 || exit /b 1
 call :Rebuild Release Win32 || exit /b 1
 call :Rebuild Release x64 || exit /b 1
+call :Rebuild Release ARM64 || exit /b 1
 
 echo.
 echo Rebuilt tolua++ static libraries:
 if exist "%~dp0Debug\tolua++D-x86.lib" echo   Debug Win32:   "%~dp0Debug\tolua++D-x86.lib"
 if exist "%~dp0x64\Debug\tolua++D-x64.lib" echo   Debug x64:     "%~dp0x64\Debug\tolua++D-x64.lib"
+if exist "%~dp0ARM64\Debug\tolua++D-arm64.lib" echo   Debug ARM64:   "%~dp0ARM64\Debug\tolua++D-arm64.lib"
 if exist "%~dp0Release\tolua++-x86.lib" echo   Release Win32: "%~dp0Release\tolua++-x86.lib"
 if exist "%~dp0x64\Release\tolua++-x64.lib" echo   Release x64:   "%~dp0x64\Release\tolua++-x64.lib"
+if exist "%~dp0ARM64\Release\tolua++-arm64.lib" echo   Release ARM64: "%~dp0ARM64\Release\tolua++-arm64.lib"
 
 exit /b 0
 
